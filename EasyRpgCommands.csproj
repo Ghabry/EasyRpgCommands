@@ -65,6 +65,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnimateVariableControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AnimateVariableControl.Designer.cs">
+      <DependentUpon>AnimateVariableControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="PathFinderControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -89,7 +95,6 @@
     <Compile Include="RmSelectVariableEx.Designer.cs">
       <DependentUpon>RmSelectVariableEx.cs</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CloneMapEventControl.cs">
       <SubType>UserControl</SubType>
@@ -111,6 +116,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AnimateVariableControl.resx">
+      <DependentUpon>AnimateVariableControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PathFinderControl.resx">
       <DependentUpon>PathFinderControl.cs</DependentUpon>
     </EmbeddedResource>

@@ -38,18 +38,26 @@ namespace EasyRpgCommands
             rmSelectVariableEx5.SelectedTypeIndex = TargetCommand[8];
             rmSelectVariableEx5.NumericValue = TargetCommand[9];
 
-            jsonPanel.Enabled = (rmSelectVariableEx1.SelectedType == cmdcs.RmSelectVariableEx.ValueType.NumericLiteral);
-            typePanel.Enabled = (rmSelectVariableEx3.SelectedType == cmdcs.RmSelectVariableEx.ValueType.NumericLiteral);
+            int flags = TargetCommand[10];
+            radioButton_parse0.Checked = true;
+            radioButton_parse1.Checked = (flags & 1) == 1;
+            radioButton_parse2.Checked = (flags & 2) == 2;
+            checkBox_pp.Checked = (flags & 4) == 4;
+            checkBox_keys.Checked = (flags & 8) == 8;
 
-            rmSelectVariableEx1.ud_value.Enabled = !jsonPanel.Enabled;
-            rmSelectVariableEx3.ud_value.Enabled = !typePanel.Enabled;
+            rmSelectVariableEx1.SetItems("Get Value", "Set Value", "Get Length", "Get Keys", "Get Type", "Remove Key", "Array Push", "Array Pop", "Contains");
+            rmSelectVariableEx3.SetItems("Switch", "Variable", "String");
+        }
+        private int makeFlags()
+        {
+            int flags = 0;
 
-            readButton.Checked = rmSelectVariableEx1.NumericValue == 0;
-            writeButton.Checked = rmSelectVariableEx1.NumericValue == 1;
+            flags += radioButton_parse1.Checked ? 1 : 0;
+            flags += radioButton_parse2.Checked ? 2 : 0;
+            flags += checkBox_pp.Checked ? 4 : 0;
+            flags += checkBox_keys.Checked ? 8 : 0;
 
-            switchButton.Checked = rmSelectVariableEx3.NumericValue == 0;
-            varButton.Checked = rmSelectVariableEx3.NumericValue == 1;
-            stringButton.Checked = rmSelectVariableEx3.NumericValue == 2;
+            return flags;
         }
 
         protected override (string Text, int[] Args) CommandArgs => (rmSelectVariableEx5.StringValue,
@@ -59,50 +67,7 @@ namespace EasyRpgCommands
                 rmSelectVariableEx3.SelectedTypeIndex, rmSelectVariableEx3.NumericValue,
                 rmSelectVariableEx4.SelectedTypeIndex, rmSelectVariableEx4.NumericValue,
                 rmSelectVariableEx5.SelectedTypeIndex, rmSelectVariableEx5.NumericValue,
+                makeFlags()
             });
-
-        private void readButton_CheckedChanged(object sender, EventArgs e)
-        {
-            if (readButton.Checked)
-            {
-                rmSelectVariableEx1.NumericValue = 0;
-            }
-
-            if (writeButton.Checked)
-            {
-                rmSelectVariableEx1.NumericValue = 1;
-            }
-
-        }
-
-        private void rmSelectVariableEx1_ValueTypeChanged(object sender, RmSelectVariableExEventArgs e)
-        {
-            jsonPanel.Enabled = (e.Type == cmdcs.RmSelectVariableEx.ValueType.NumericLiteral);
-            rmSelectVariableEx1.ud_value.Enabled = !jsonPanel.Enabled;
-        }
-
-        private void rmSelectVariableEx3_ValueTypeChanged(object sender, RmSelectVariableExEventArgs e)
-        {
-            typePanel.Enabled = (e.Type == cmdcs.RmSelectVariableEx.ValueType.NumericLiteral);
-            rmSelectVariableEx3.ud_value.Enabled = !typePanel.Enabled;
-        }
-
-        private void switchButton_CheckedChanged(object sender, EventArgs e)
-        {
-            if (switchButton.Checked)
-            {
-                rmSelectVariableEx3.NumericValue = 0;
-            }
-
-            if (varButton.Checked)
-            {
-                rmSelectVariableEx3.NumericValue = 1;
-            }
-
-            if (stringButton.Checked)
-            {
-                rmSelectVariableEx3.NumericValue = 2;
-            }
-        }
     }
 }

@@ -33,24 +33,22 @@ namespace EasyRpgCommands
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.typePanel = new System.Windows.Forms.Panel();
-            this.stringButton = new System.Windows.Forms.RadioButton();
-            this.varButton = new System.Windows.Forms.RadioButton();
-            this.switchButton = new System.Windows.Forms.RadioButton();
-            this.jsonPanel = new System.Windows.Forms.Panel();
-            this.writeButton = new System.Windows.Forms.RadioButton();
-            this.readButton = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
-            this.rmSelectVariableEx5 = new EasyRpgCommands.RmSelectVariableEx();
             this.label4 = new System.Windows.Forms.Label();
-            this.rmSelectVariableEx4 = new EasyRpgCommands.RmSelectVariableEx();
             this.label3 = new System.Windows.Forms.Label();
+            this.rmSelectVariableEx5 = new EasyRpgCommands.RmSelectVariableEx();
+            this.rmSelectVariableEx4 = new EasyRpgCommands.RmSelectVariableEx();
             this.rmSelectVariableEx3 = new EasyRpgCommands.RmSelectVariableEx();
             this.rmSelectVariableEx1 = new EasyRpgCommands.RmSelectVariableEx();
             this.rmSelectVariableEx2 = new EasyRpgCommands.RmSelectVariableEx();
+            this.checkBox_pp = new System.Windows.Forms.CheckBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.radioButton_parse0 = new System.Windows.Forms.RadioButton();
+            this.radioButton_parse1 = new System.Windows.Forms.RadioButton();
+            this.radioButton_parse2 = new System.Windows.Forms.RadioButton();
+            this.checkBox_keys = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
-            this.typePanel.SuspendLayout();
-            this.jsonPanel.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -73,8 +71,9 @@ namespace EasyRpgCommands
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.typePanel);
-            this.groupBox1.Controls.Add(this.jsonPanel);
+            this.groupBox1.Controls.Add(this.checkBox_keys);
+            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.checkBox_pp);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.rmSelectVariableEx5);
             this.groupBox1.Controls.Add(this.label4);
@@ -87,89 +86,10 @@ namespace EasyRpgCommands
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(916, 240);
+            this.groupBox1.Size = new System.Drawing.Size(916, 365);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Process JSON (Requires EasyRPG Player)";
-            // 
-            // typePanel
-            // 
-            this.typePanel.Controls.Add(this.stringButton);
-            this.typePanel.Controls.Add(this.varButton);
-            this.typePanel.Controls.Add(this.switchButton);
-            this.typePanel.Location = new System.Drawing.Point(543, 107);
-            this.typePanel.Name = "typePanel";
-            this.typePanel.Size = new System.Drawing.Size(345, 42);
-            this.typePanel.TabIndex = 17;
-            // 
-            // stringButton
-            // 
-            this.stringButton.AutoSize = true;
-            this.stringButton.Location = new System.Drawing.Point(214, 4);
-            this.stringButton.Name = "stringButton";
-            this.stringButton.Size = new System.Drawing.Size(76, 24);
-            this.stringButton.TabIndex = 2;
-            this.stringButton.TabStop = true;
-            this.stringButton.Text = "String";
-            this.stringButton.UseVisualStyleBackColor = true;
-            this.stringButton.CheckedChanged += new System.EventHandler(this.switchButton_CheckedChanged);
-            // 
-            // varButton
-            // 
-            this.varButton.AutoSize = true;
-            this.varButton.Location = new System.Drawing.Point(104, 3);
-            this.varButton.Name = "varButton";
-            this.varButton.Size = new System.Drawing.Size(92, 24);
-            this.varButton.TabIndex = 1;
-            this.varButton.TabStop = true;
-            this.varButton.Text = "Variable";
-            this.varButton.UseVisualStyleBackColor = true;
-            this.varButton.CheckedChanged += new System.EventHandler(this.switchButton_CheckedChanged);
-            // 
-            // switchButton
-            // 
-            this.switchButton.AutoSize = true;
-            this.switchButton.Location = new System.Drawing.Point(4, 4);
-            this.switchButton.Name = "switchButton";
-            this.switchButton.Size = new System.Drawing.Size(81, 24);
-            this.switchButton.TabIndex = 0;
-            this.switchButton.TabStop = true;
-            this.switchButton.Text = "Switch";
-            this.switchButton.UseVisualStyleBackColor = true;
-            this.switchButton.CheckedChanged += new System.EventHandler(this.switchButton_CheckedChanged);
-            // 
-            // jsonPanel
-            // 
-            this.jsonPanel.Controls.Add(this.writeButton);
-            this.jsonPanel.Controls.Add(this.readButton);
-            this.jsonPanel.Location = new System.Drawing.Point(543, 25);
-            this.jsonPanel.Name = "jsonPanel";
-            this.jsonPanel.Size = new System.Drawing.Size(345, 42);
-            this.jsonPanel.TabIndex = 16;
-            // 
-            // writeButton
-            // 
-            this.writeButton.AutoSize = true;
-            this.writeButton.Location = new System.Drawing.Point(159, 4);
-            this.writeButton.Name = "writeButton";
-            this.writeButton.Size = new System.Drawing.Size(117, 24);
-            this.writeButton.TabIndex = 1;
-            this.writeButton.TabStop = true;
-            this.writeButton.Text = "Write JSON";
-            this.writeButton.UseVisualStyleBackColor = true;
-            this.writeButton.CheckedChanged += new System.EventHandler(this.readButton_CheckedChanged);
-            // 
-            // readButton
-            // 
-            this.readButton.AutoSize = true;
-            this.readButton.Location = new System.Drawing.Point(4, 4);
-            this.readButton.Name = "readButton";
-            this.readButton.Size = new System.Drawing.Size(119, 24);
-            this.readButton.TabIndex = 0;
-            this.readButton.TabStop = true;
-            this.readButton.Text = "Read JSON";
-            this.readButton.UseVisualStyleBackColor = true;
-            this.readButton.CheckedChanged += new System.EventHandler(this.readButton_CheckedChanged);
             // 
             // label6
             // 
@@ -179,6 +99,24 @@ namespace EasyRpgCommands
             this.label6.Size = new System.Drawing.Size(92, 20);
             this.label6.TabIndex = 13;
             this.label6.Text = "JSON Path:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 148);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(109, 20);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Target Var ID:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 107);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(126, 20);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Target Var Type:";
             // 
             // rmSelectVariableEx5
             // 
@@ -200,15 +138,6 @@ namespace EasyRpgCommands
         cmdcs.RmSelectVariableEx.ValueType.Strvar,
         cmdcs.RmSelectVariableEx.ValueType.StrvarRef};
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 148);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 20);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Target Var ID:";
-            // 
             // rmSelectVariableEx4
             // 
             this.rmSelectVariableEx4.ItemWidth1 = 100;
@@ -229,15 +158,6 @@ namespace EasyRpgCommands
         cmdcs.RmSelectVariableEx.ValueType.Variable,
         cmdcs.RmSelectVariableEx.ValueType.VariableRef};
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 107);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 20);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Target Var Type:";
-            // 
             // rmSelectVariableEx3
             // 
             this.rmSelectVariableEx3.ItemWidth1 = 100;
@@ -246,7 +166,7 @@ namespace EasyRpgCommands
             this.rmSelectVariableEx3.Name = "rmSelectVariableEx3";
             this.rmSelectVariableEx3.NumericButtonClick = null;
             this.rmSelectVariableEx3.NumericValue = 0;
-            this.rmSelectVariableEx3.SelectedType = cmdcs.RmSelectVariableEx.ValueType.NumericLiteral;
+            this.rmSelectVariableEx3.SelectedType = cmdcs.RmSelectVariableEx.ValueType.Anim2Id;
             this.rmSelectVariableEx3.SelectedTypeIndex = 0;
             this.rmSelectVariableEx3.Size = new System.Drawing.Size(400, 35);
             this.rmSelectVariableEx3.StringButtonClick = null;
@@ -254,10 +174,9 @@ namespace EasyRpgCommands
             this.rmSelectVariableEx3.TabIndex = 6;
             this.rmSelectVariableEx3.ValueRange = ((System.ValueTuple<int, int>)(resources.GetObject("rmSelectVariableEx3.ValueRange")));
             this.rmSelectVariableEx3.ValueTypeArray = new cmdcs.RmSelectVariableEx.ValueType[] {
-        cmdcs.RmSelectVariableEx.ValueType.NumericLiteral,
+        cmdcs.RmSelectVariableEx.ValueType.Anim2Id,
         cmdcs.RmSelectVariableEx.ValueType.Variable,
         cmdcs.RmSelectVariableEx.ValueType.VariableRef};
-            this.rmSelectVariableEx3.ValueTypeChanged += new cmdcs.RmSelectVariableEx.ValueTypeChangedEventHandler(this.rmSelectVariableEx3_ValueTypeChanged);
             // 
             // rmSelectVariableEx1
             // 
@@ -267,7 +186,7 @@ namespace EasyRpgCommands
             this.rmSelectVariableEx1.Name = "rmSelectVariableEx1";
             this.rmSelectVariableEx1.NumericButtonClick = null;
             this.rmSelectVariableEx1.NumericValue = 0;
-            this.rmSelectVariableEx1.SelectedType = cmdcs.RmSelectVariableEx.ValueType.NumericLiteral;
+            this.rmSelectVariableEx1.SelectedType = cmdcs.RmSelectVariableEx.ValueType.Anim2Id;
             this.rmSelectVariableEx1.SelectedTypeIndex = 0;
             this.rmSelectVariableEx1.Size = new System.Drawing.Size(400, 35);
             this.rmSelectVariableEx1.StringButtonClick = null;
@@ -275,10 +194,9 @@ namespace EasyRpgCommands
             this.rmSelectVariableEx1.TabIndex = 2;
             this.rmSelectVariableEx1.ValueRange = ((System.ValueTuple<int, int>)(resources.GetObject("rmSelectVariableEx1.ValueRange")));
             this.rmSelectVariableEx1.ValueTypeArray = new cmdcs.RmSelectVariableEx.ValueType[] {
-        cmdcs.RmSelectVariableEx.ValueType.NumericLiteral,
+        cmdcs.RmSelectVariableEx.ValueType.Anim2Id,
         cmdcs.RmSelectVariableEx.ValueType.Variable,
         cmdcs.RmSelectVariableEx.ValueType.VariableRef};
-            this.rmSelectVariableEx1.ValueTypeChanged += new cmdcs.RmSelectVariableEx.ValueTypeChangedEventHandler(this.rmSelectVariableEx1_ValueTypeChanged);
             // 
             // rmSelectVariableEx2
             // 
@@ -299,19 +217,82 @@ namespace EasyRpgCommands
         cmdcs.RmSelectVariableEx.ValueType.Strvar,
         cmdcs.RmSelectVariableEx.ValueType.StrvarRef};
             // 
+            // checkBox_pp
+            // 
+            this.checkBox_pp.AutoSize = true;
+            this.checkBox_pp.Location = new System.Drawing.Point(425, 230);
+            this.checkBox_pp.Name = "checkBox_pp";
+            this.checkBox_pp.Size = new System.Drawing.Size(158, 24);
+            this.checkBox_pp.TabIndex = 15;
+            this.checkBox_pp.Text = "Pretty Print JSON";
+            this.checkBox_pp.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.radioButton_parse2);
+            this.groupBox2.Controls.Add(this.radioButton_parse1);
+            this.groupBox2.Controls.Add(this.radioButton_parse0);
+            this.groupBox2.Location = new System.Drawing.Point(10, 224);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(409, 135);
+            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Parser settings";
+            // 
+            // radioButton_parse0
+            // 
+            this.radioButton_parse0.AutoSize = true;
+            this.radioButton_parse0.Location = new System.Drawing.Point(7, 26);
+            this.radioButton_parse0.Name = "radioButton_parse0";
+            this.radioButton_parse0.Size = new System.Drawing.Size(111, 24);
+            this.radioButton_parse0.TabIndex = 0;
+            this.radioButton_parse0.TabStop = true;
+            this.radioButton_parse0.Text = "No Parsing";
+            this.radioButton_parse0.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_parse1
+            // 
+            this.radioButton_parse1.AutoSize = true;
+            this.radioButton_parse1.Location = new System.Drawing.Point(7, 57);
+            this.radioButton_parse1.Name = "radioButton_parse1";
+            this.radioButton_parse1.Size = new System.Drawing.Size(265, 24);
+            this.radioButton_parse1.TabIndex = 1;
+            this.radioButton_parse1.TabStop = true;
+            this.radioButton_parse1.Text = "Parse Command Codes (\\V[] etc)";
+            this.radioButton_parse1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_parse2
+            // 
+            this.radioButton_parse2.AutoSize = true;
+            this.radioButton_parse2.Location = new System.Drawing.Point(7, 88);
+            this.radioButton_parse2.Name = "radioButton_parse2";
+            this.radioButton_parse2.Size = new System.Drawing.Size(387, 24);
+            this.radioButton_parse2.TabIndex = 2;
+            this.radioButton_parse2.TabStop = true;
+            this.radioButton_parse2.Text = "Parse Command Codes (\\V[] etc., numbers in Hex)";
+            this.radioButton_parse2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_keys
+            // 
+            this.checkBox_keys.AutoSize = true;
+            this.checkBox_keys.Location = new System.Drawing.Point(425, 260);
+            this.checkBox_keys.Name = "checkBox_keys";
+            this.checkBox_keys.Size = new System.Drawing.Size(275, 24);
+            this.checkBox_keys.TabIndex = 17;
+            this.checkBox_keys.Text = "Wrap \"Get Keys\" list in { \"keys\": [] }";
+            this.checkBox_keys.UseVisualStyleBackColor = true;
+            // 
             // ProcessJsonControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Name = "ProcessJsonControl";
-            this.Size = new System.Drawing.Size(927, 254);
+            this.Size = new System.Drawing.Size(927, 381);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.typePanel.ResumeLayout(false);
-            this.typePanel.PerformLayout();
-            this.jsonPanel.ResumeLayout(false);
-            this.jsonPanel.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -329,12 +310,11 @@ namespace EasyRpgCommands
         private System.Windows.Forms.Label label4;
         private RmSelectVariableEx rmSelectVariableEx5;
         private RmSelectVariableEx rmSelectVariableEx4;
-        private System.Windows.Forms.Panel jsonPanel;
-        private System.Windows.Forms.RadioButton readButton;
-        private System.Windows.Forms.RadioButton writeButton;
-        private System.Windows.Forms.Panel typePanel;
-        private System.Windows.Forms.RadioButton varButton;
-        private System.Windows.Forms.RadioButton switchButton;
-        private System.Windows.Forms.RadioButton stringButton;
+        private System.Windows.Forms.CheckBox checkBox_pp;
+        private System.Windows.Forms.CheckBox checkBox_keys;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton radioButton_parse2;
+        private System.Windows.Forms.RadioButton radioButton_parse1;
+        private System.Windows.Forms.RadioButton radioButton_parse0;
     }
 }
