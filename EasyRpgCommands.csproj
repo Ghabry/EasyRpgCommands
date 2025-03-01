@@ -71,6 +71,7 @@
     <Compile Include="AnimateVariableControl.Designer.cs">
       <DependentUpon>AnimateVariableControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper.cs" />
     <Compile Include="PathFinderControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -89,6 +90,12 @@
     <Compile Include="DestroyMapEventControl.Designer.cs">
       <DependentUpon>DestroyMapEventControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="RmSelectVariableExJson.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RmSelectVariableExJson.Designer.cs">
+      <DependentUpon>RmSelectVariableExJson.cs</DependentUpon>
+    </Compile>
     <Compile Include="RmSelectVariableEx.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -101,6 +108,9 @@
     </Compile>
     <Compile Include="CloneMapEventControl.Designer.cs">
       <DependentUpon>CloneMapEventControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextInputDialog.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="WaitForSingleMovementControl.cs">
       <SubType>UserControl</SubType>
@@ -130,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CloneMapEventControl.resx">
       <DependentUpon>CloneMapEventControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RmSelectVariableExJson.resx">
+      <DependentUpon>RmSelectVariableExJson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RmSelectVariableEx.resx">
       <DependentUpon>RmSelectVariableEx.cs</DependentUpon>

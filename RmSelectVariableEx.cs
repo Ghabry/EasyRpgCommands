@@ -13,11 +13,11 @@ namespace EasyRpgCommands
 {
     public partial class RmSelectVariableEx : cmdcs.RmSelectVariableEx
     {
-        private ComboBox cb_type = null;
-        private NumericUpDown ud_val = null;
-        private ComboBox cb_item = null;
-        private TableLayoutPanel panel = null;
-        private bool restoreLayout = false;
+        protected ComboBox cb_type = null;
+        protected NumericUpDown ud_val = null;
+        protected ComboBox cb_item = null;
+        protected TableLayoutPanel panel = null;
+        protected bool restoreLayout = false;
 
         public RmSelectVariableEx() : base()
         {
