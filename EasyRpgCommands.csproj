@@ -50,6 +50,9 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>.\0Harmony.dll</HintPath>
+    </Reference>
     <Reference Include="cmdcs">
       <HintPath>..\cmdcs.dll</HintPath>
     </Reference>
@@ -72,6 +75,10 @@
       <DependentUpon>AnimateVariableControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper.cs" />
+    <Compile Include="InitControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EasyCmdControlAttribute.cs" />
     <Compile Include="PathFinderControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

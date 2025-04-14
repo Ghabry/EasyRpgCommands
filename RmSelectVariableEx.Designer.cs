@@ -31,7 +31,6 @@ namespace EasyRpgCommands
         /// </summary>
         private void InitializeComponent()
         {
-            ((System.ComponentModel.ISupportInitialize)(this.ud_value)).BeginInit();
             this.SuspendLayout();
             // 
             // RmSelectVariableEx
@@ -39,7 +38,6 @@ namespace EasyRpgCommands
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "RmSelectVariableEx";
-            ((System.ComponentModel.ISupportInitialize)(this.ud_value)).EndInit();
             this.ResumeLayout(false);
 
         }

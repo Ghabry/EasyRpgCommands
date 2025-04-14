@@ -14,7 +14,7 @@ namespace EasyRpgCommands
     public partial class RmSelectVariableEx : cmdcs.RmSelectVariableEx
     {
         protected ComboBox cb_type = null;
-        protected NumericUpDown ud_val = null;
+        public NumericUpDown ud_val = null;
         protected ComboBox cb_item = null;
         protected TableLayoutPanel panel = null;
         protected bool restoreLayout = false;

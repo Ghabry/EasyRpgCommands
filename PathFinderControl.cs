@@ -67,7 +67,7 @@ namespace EasyRpgCommands
             rmSelectVariableEx7.NumericValue = TargetCommand[ni+1];
 
             eventidText.Enabled = (rmSelectVariableEx6.SelectedType == cmdcs.RmSelectVariableEx.ValueType.NumericLiteral);
-            rmSelectVariableEx6.ud_value.Enabled = !eventidText.Enabled;
+            rmSelectVariableEx6.ud_val.Enabled = !eventidText.Enabled;
         }
 
         protected override (string Text, int[] Args) CommandArgs
@@ -130,7 +130,7 @@ namespace EasyRpgCommands
         private void rmSelectVariableEx6_ValueTypeChanged(object sender, RmSelectVariableExEventArgs e)
         {
             eventidText.Enabled = (e.Type == cmdcs.RmSelectVariableEx.ValueType.NumericLiteral);
-            rmSelectVariableEx6.ud_value.Enabled = !eventidText.Enabled;
+            rmSelectVariableEx6.ud_val.Enabled = !eventidText.Enabled;
         }
 
         private void buttonMoveRoute_Click(object sender, EventArgs e)
