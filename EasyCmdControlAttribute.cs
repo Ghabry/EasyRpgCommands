@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,6 +11,12 @@ namespace EasyRpgCommands
 {
     class EasyCmdControlAttribute : cmdcs.Rm2k3CmdControlAttribute
     {
+        [DllImport("kernel32.dll", CharSet = CharSet.Ansi, ExactSpelling = true, SetLastError = true)]
+        public static extern IntPtr GetProcAddress(IntPtr hModule, string procName);
+
+        [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Ansi)]
+        public static extern IntPtr LoadLibrary([MarshalAs(UnmanagedType.LPStr)] string lpFileName);
+
         static EasyCmdControlAttribute()
         {
             var harmony = new Harmony("org.easyrpg.commands");
@@ -20,6 +27,8 @@ namespace EasyRpgCommands
             var prefix = typeof(EasyCmdControlAttribute).GetMethod(nameof(SupportEasyRpgCommands), BindingFlags.Static | BindingFlags.NonPublic);
 
             harmony.Patch(targetMethod, prefix: new HarmonyMethod(prefix));
+
+            LoadLibrary("Plugin/EasyCmdTos.dll");
         }
 
         private static bool SupportEasyRpgCommands(ref bool __result, int code)
